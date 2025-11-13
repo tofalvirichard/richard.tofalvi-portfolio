@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tófalvi Richárd – Power BI / Data Analyst Portfolio</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #020617;
+            --bg-elevated: #020617;
+            --card: #020617;
+            --accent: #0ea5e9;
+            --accent-soft: rgba(14, 165, 233, 0.15);
+            --text: #e5e7eb;
+            --text-muted: #94a3b8;
+            --border-subtle: #1e293b;
+            --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.65);
+            --radius-xl: 22px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #0b1120 0, #020617 50%, #020617 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page {
+            min-height: 100vh;
+        }
+
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(16px);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.75), transparent);
+            border-bottom: 1px solid rgba(30, 64, 175, 0.4);
+        }
+
+        .nav-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 30%, #e0f2fe, #0ea5e9 40%, #1d4ed8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.6),
+                        0 10px 30px rgba(15, 23, 42, 0.9);
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .brand-text-main {
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            font-size: 0.95rem;
+        }
+
+        .brand-text-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            padding: 0.3rem 0.8rem;
+            border-radius: 999px;
+            color: var(--text-muted);
+            border: 1px solid transparent;
+            transition: all 0.18s ease-out;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+            border-color: rgba(148, 163, 184, 0.4);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .nav-pill {
+            border-color: rgba(56, 189, 248, 0.7)!important;
+            background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.35), rgba(15, 23, 42, 0.95));
+            color: #e5f3ff!important;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.55);
+        }
+
+        main {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            padding-bottom: 4rem;
+        }
+
+        /* Hero */
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 2.75rem;
+            align-items: center;
+            padding-top: 2.25rem;
+            padding-bottom: 2.75rem;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .chip-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.4rem 0.25rem 0.25rem;
+            border-radius: 999px;
+            background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.35), rgba(15, 23, 42, 0.9));
+            border: 1px solid rgba(56, 189, 248, 0.55);
+            color: #e0f2fe;
+            font-size: 0.76rem;
+            width: fit-content;
+        }
+
+        .chip-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 999px;
+            background: #22c55e;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+        }
+
+        .chip-label {
+            padding: 0.15rem 0.65rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+        }
+
+        h1 {
+            font-size: clamp(2.1rem, 4vw, 2.7rem);
+            letter-spacing: -0.03em;
+        }
+
+        h1 span.highlight {
+            background: linear-gradient(to right, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            max-width: 34rem;
+        }
+
+        .hero-subtitle strong {
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            border-radius: 999px;
+            padding: 0.65rem 1.4rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: radial-gradient(circle at 10% 0, #38bdf8, #0ea5e9, #2563eb);
+            border-color: rgba(56, 189, 248, 0.9);
+            color: #0b1220;
+            box-shadow: 0 18px 40px rgba(37, 99, 235, 0.6);
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.07);
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            background: rgba(15, 23, 42, 0.9);
+            border-color: rgba(148, 163, 184, 0.5);
+            color: var(--text);
+        }
+
+        .btn-ghost:hover {
+            border-color: rgba(148, 163, 184, 0.9);
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .btn-icon {
+            font-size: 1.1rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .meta-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #64748b;
+        }
+
+        .meta-value {
+            font-size: 0.9rem;
+            color: #e2e8f0;
+        }
+
+        .hero-card {
+            border-radius: var(--radius-xl);
+            background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.25), rgba(15, 23, 42, 0.96));
+            border: 1px solid rgba(30, 64, 175, 0.7);
+            box-shadow: var(--shadow-soft);
+            padding: 1.4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .hero-card-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .hero-card-tag {
+            font-size: 0.78rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.8);
+            color: #cbd5f5;
+        }
+
+        .hero-kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.9rem;
+        }
+
+        .hero-kpi {
+            padding: 0.75rem 0.85rem;
+            border-radius: 18px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(30, 64, 175, 0.7);
+        }
+
+        .hero-kpi-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-kpi-value {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .hero-kpi-trend {
+            font-size: 0.75rem;
+            color: #22c55e;
+        }
+
+        .hero-card-footer {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            color: #cbd5f5;
+        }
+
+        .hero-card-footer span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Sections */
+
+        section {
+            margin-bottom: 2.75rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #cbd5f5;
+        }
+
+        .section-subtitle {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+        }
+
+        /* Projects */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            padding: 1.1rem 1.15rem;
+            box-shadow: 0 16px 30px rgba(15, 23, 42, 0.9);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0;
+            background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent 60%);
+            transition: opacity 0.2s ease-out;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 0.98rem;
+            font-weight: 500;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(56, 189, 248, 0.7);
+            color: #e0f2fe;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: 0.25rem;
+        }
+
+        .badge {
+            font-size: 0.74rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(51, 65, 85, 0.9);
+            color: #cbd5f5;
+        }
+
+        .card-links {
+            margin-top: 0.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .card-link {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            border: 1px dashed rgba(148, 163, 184, 0.7);
+            color: #e2e8f0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            transition: all 0.18s ease-out;
+        }
+
+        .card-link:hover {
+            border-style: solid;
+            border-color: rgba(56, 189, 248, 0.9);
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        /* Skills */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 2.1fr 1.4fr;
+            gap: 1rem;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .pill {
+            font-size: 0.8rem;
+            padding: 0.30rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(51, 65, 85, 0.9);
+            background: rgba(15, 23, 42, 0.9);
+            color: #e5e7eb;
+        }
+
+        .pill-strong {
+            border-color: rgba(56, 189, 248, 0.8);
+            background: var(--accent-soft);
+            color: #e0f2fe;
+        }
+
+        .skills-note {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            margin-top: 0.6rem;
+        }
+
+        .experience-card {
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            padding: 1rem 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            font-size: 0.86rem;
+        }
+
+        .exp-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #64748b;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            background: rgba(15, 23, 42, 0.96);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(30, 64, 175, 0.7);
+            padding: 1rem 1.1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.9rem;
+        }
+
+        .contact-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-text strong {
+            color: #e2e8f0;
+        }
+
+        footer {
+            border-top: 1px solid rgba(30, 64, 175, 0.7);
+            padding: 1.4rem 1.5rem 1.8rem;
+            font-size: 0.78rem;
+            color: #64748b;
+            text-align: center;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+                padding-top: 1.75rem;
+            }
+
+            .hero-card {
+                order: -1;
+            }
+
+            .skills-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            main {
+                padding-inline: 1rem;
+            }
+
+            .card-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .contact-box {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- NAV -->
+    <header class="top-nav">
+        <div class="nav-inner">
+            <div class="brand">
+                <div class="brand-logo">TR</div>
+                <div>
+                    <div class="brand-text-main">Tófalvi Richárd</div>
+                    <div class="brand-text-sub">Power BI / Data Analyst</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#about">Rólam</a>
+                <a href="#projects" class="nav-pill">Projektek</a>
+                <a href="#skills">Készségek</a>
+                <a href="#contact">Kapcsolat</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="about">
+            <div class="hero-text">
+                <div class="chip-row">
+                    <span class="chip-dot"></span>
+                    <span>Junior / kezdő szint</span>
+                    <span class="chip-label">Power BI • SQL • Python</span>
+                </div>
+
+                <h1>
+                    <span class="highlight">Power BI & Data Analyst</span><br/>
+                    portfólió – üzleti kérdésekre épített riportokkal.
+                </h1>
+
+                <p class="hero-subtitle">
+                    Szia, <strong>Tófalvi Richárd</strong> vagyok. Adatelemzéssel, <strong>Power BI riportokkal</strong> és
+                    <strong>SQL / Python alapú elemzésekkel</strong> foglalkozom. Az alábbi projektekben valós üzleti
+                    kérdésekre készítettem mutatószámokat, adatmodelleket és vizualizációkat.
+                </p>
+
+                <div class="hero-actions">
+                    <!-- IDE TEHETSZ CV LINKET -->
+                    <a href="#" class="btn btn-primary">
+                        <span class="btn-icon">📄</span>
+                        <span>Önéletrajz letöltése (PDF)</span>
+                    </a>
+                    <a href="#projects" class="btn btn-ghost">
+                        <span class="btn-icon">📊</span>
+                        <span>Megnézem a projektjeimet</span>
+                    </a>
+                </div>
+
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Fókusz</div>
+                        <div class="meta-value">Adatvizualizáció, pénzügy, HR, sport, időjárás</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Eszközök</div>
+                        <div class="meta-value">Power BI, SQL, DAX, Power Query, Python, Excel</div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-card" aria-label="Dashboard snapshot">
+                <div class="hero-card-header">
+                    <div>
+                        <div class="hero-card-title">Financial Controlling Dashboard</div>
+                        <div class="hero-card-tag">Minta riport – SAP-szerű modell</div>
+                    </div>
+                    <span style="font-size:1.2rem;">📈</span>
+                </div>
+
+                <div class="hero-kpi-grid">
+                    <div class="hero-kpi">
+                        <div class="hero-kpi-label">Összes árbevétel</div>
+                        <div class="hero-kpi-value">€12.4M</div>
+                        <div class="hero-kpi-trend">+8.2% YoY</div>
+                    </div>
+                    <div class="hero-kpi">
+                        <div class="hero-kpi-label">Bruttó marzs</div>
+                        <div class="hero-kpi-value">31.6%</div>
+                        <div class="hero-kpi-trend">+2.3 p.p.</div>
+                    </div>
+                    <div class="hero-kpi">
+                        <div class="hero-kpi-label">Top termékcsalád</div>
+                        <div class="hero-kpi-value">Cleaning & Household</div>
+                    </div>
+                    <div class="hero-kpi">
+                        <div class="hero-kpi-label">Értékesítési régió</div>
+                        <div class="hero-kpi-value">DACH & CEE fókusz</div>
+                    </div>
+                </div>
+
+                <div class="hero-card-footer">
+                    <span>⚙️ Fact + dim modell, DAX mérések</span>
+                    <span>Power BI • SQL • Excel</span>
+                </div>
+            </aside>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+    <div class="section-header">
+        <h2 class="section-title">Projektek</h2>
+        <p class="section-subtitle">
+            Három fő területen dolgozom: Data Cleaning, Data Analysis és Data Visualization.
+        </p>
+    </div>
+
+    <!-- DATA CLEANING -->
+    <h3 class="section-subtitle" style="margin-bottom:0.4rem;">🧹 Data Cleaning</h3>
+    <p class="section-subtitle" style="margin-bottom:0.8rem;">
+        Nyers, hibás és strukturálatlan adatok tisztítása, egységesítése és előkészítése elemzéshez.
+    </p>
+
+    <div class="card-grid" style="margin-bottom:1.8rem;">
+        <!-- FIFA 21 CLEANING -->
+        <article class="card">
+            <div class="card-title-row">
+                <h3 class="card-title">FIFA21 Players – Data Cleaning</h3>
+                <span class="card-tag">Data Cleaning</span>
+            </div>
+            <p class="card-desc">
+                FIFA21 játékos-adatbázis alapos megtisztítása. Hibás és kevert mértékegységek javítása,
+                speciális karakterek eltávolítása, Value/Wage mezők egységesítése és a teljes dataset
+                elemzésre alkalmas formába hozása.
+            </p>
+            <div class="card-meta">
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">Jupyter Notebook</span>
+            </div>
+            <div class="card-links">
+                <a href="#" class="card-link">📓 Notebook megnyitása</a>
+            </div>
+        </article>
+    </div>
+
+    <!-- DATA ANALYSIS -->
+    <h3 class="section-subtitle" style="margin-bottom:0.4rem;">📊 Data Analysis</h3>
+    <p class="section-subtitle" style="margin-bottom:0.8rem;">
+        Üzleti és HR fókuszú elemzések Python segítségével, statisztikai és kategorizálási megközelítéssel.
+    </p>
+
+    <div class="card-grid" style="margin-bottom:1.8rem;">
+        <!-- Salary Analysis -->
+        <article class="card">
+            <div class="card-title-row">
+                <h3 class="card-title">Salary & Work Experience – Stack Overflow Survey 2024</h3>
+                <span class="card-tag">Data Analysis</span>
+            </div>
+            <p class="card-desc">
+                IT fizetések elemzése a Stack Overflow 2024-es kérdőív alapján.
+                Adattisztítással kezdtem, majd munkatapasztalat szerinti kategóriákat hoztam létre.
+                A fizetések eloszlását, medián értékeket és trendeket Pythonban vizualizáltam.
+            </p>
+            <div class="card-meta">
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">Jupyter Notebook</span>
+                <span class="badge">Data Cleaning + Analysis</span>
+            </div>
+            <div class="card-links">
+                <a href="#" class="card-link">📓 Notebook megnyitása</a>
+            </div>
+        </article>
+    </div>
+
+    <!-- DATA VISUALIZATION -->
+    <h3 class="section-subtitle" style="margin-bottom:0.4rem;">📈 Data Visualization</h3>
+    <p class="section-subtitle" style="margin-bottom:0.8rem;">
+        Történetmesélő Power BI dashboardok létrehozása, modern dizájnnal és letisztult KPI-ekkel.
+    </p>
+
+    <div class="card-grid">
+        <!-- World Population Dashboard -->
+        <article class="card">
+            <div class="card-title-row">
+                <h3 class="card-title">World Country Population 2025</h3>
+                <span class="card-tag">Data Visualization</span>
+            </div>
+            <p class="card-desc">
+                Power BI riport, amely bemutatja az országok 2025-ös népességét, migrációt,
+                termékenységi rátát és demográfiai trendeket. Egyedi mérések és kategóriák (pl.
+                Fertility Category, Migration Impact Index) segítik a gyors áttekintést.
+            </p>
+            <div class="card-meta">
+                <span class="badge">Power BI</span>
+                <span class="badge">DAX</span>
+                <span class="badge">Data Visualization</span>
+            </div>
+            <div class="card-links">
+                <a href="#" class="card-link">🌍 Interaktív riport</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <div class="section-header">
+                <h2 class="section-title">Készségek & eszközök</h2>
+                <p class="section-subtitle">
+                    Az alábbi technológiákkal dolgozom a projektek során – a fókusz a Power BI ökoszisztémán van.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div>
+                    <div class="pill-row">
+                        <span class="pill pill-strong">Power BI riportkészítés</span>
+                        <span class="pill pill-strong">DAX mérések</span>
+                        <span class="pill">Power Query (M)</span>
+                        <span class="pill">SQL (PostgreSQL, MySQL)</span>
+                        <span class="pill">Excel (táblázatkezelés, pivot)</span>
+                        <span class="pill">Adattisztítás, előkészítés</span>
+                    </div>
+                    <p class="skills-note">
+                        Több online tanfolyamot végeztem (SQL, Power BI, Python, Data Science),
+                        és ezekhez saját gyakorló projekteket építettem, amelyek részben ezen a portfólió oldalon is láthatók.
+                    </p>
+                </div>
+                <aside class="experience-card">
+                    <div class="exp-label">Fókusz területek</div>
+                    <div>
+                        • Üzleti riportok felépítése: igény → adatmodell → mérések → vizualizáció<br/>
+                        • Dimenziós modellezés (fact táblák + dimenziók)<br/>
+                        • Mutatószámok számítása DAX-szal (YOY, mozgóátlag, kategória szerinti bontások)<br/>
+                        • Adatelemzés Pythonban: tisztítás, aggregálás, alap statisztika, regressziós modellek
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Kapcsolat</h2>
+                <p class="section-subtitle">
+                    Szívesen beszélgetek Power BI projektekről, adatelemzésről vagy leendő pozícióról.
+                </p>
+            </div>
+
+            <div class="contact-box">
+                <p class="contact-text">
+                    <strong>Nyitott vagyok junior / kezdő Data Analyst / Power BI Specialist pozíciókra.</strong><br/>
+                    Ha szívesen megnézné, hogyan gondolkodom adatokban, örömmel beszélek részletesen egy-egy projektről is.
+                </p>
+                <div class="hero-actions">
+                    <!-- Cseréld az email címet a sajátodra -->
+                    <a href="mailto:your.email@example.com" class="btn btn-primary">
+                        <span class="btn-icon">✉️</span>
+                        <span>Kapcsolatfelvétel e-mailben</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © <span id="year"></span> Tófalvi Richárd · Portfolio.<br/>
+        Készült: Power BI / Data Analytics tanulási projektek alapján.
+    </footer>
+</div>
+
+<script>
+    // Dinamikus év a láblécben
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
