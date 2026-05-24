@@ -133,8 +133,6 @@
             padding-bottom: 4rem;
         }
 
-        /* Hero */
-
         .hero {
             display: grid;
             grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
@@ -353,8 +351,6 @@
             gap: 0.3rem;
         }
 
-        /* Sections */
-
         section {
             margin-bottom: 2.75rem;
         }
@@ -379,8 +375,6 @@
             font-size: 0.86rem;
             color: var(--text-muted);
         }
-
-        /* Projects */
 
         .card-grid {
             display: grid;
@@ -483,7 +477,6 @@
             background: rgba(15, 23, 42, 0.95);
         }
 
-        /* Image hover – plusz egységes magasság a képeknél */
         .card img {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -492,8 +485,6 @@
             transform: scale(1.015);
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
         }
-
-        /* Skills */
 
         .skills-grid {
             display: grid;
@@ -546,8 +537,6 @@
             color: #64748b;
         }
 
-        /* Contact */
-
         .contact-box {
             background: rgba(15, 23, 42, 0.96);
             border-radius: var(--radius-xl);
@@ -576,8 +565,6 @@
             color: #64748b;
             text-align: center;
         }
-
-        /* Responsive */
 
         @media (max-width: 900px) {
             .hero {
@@ -623,7 +610,7 @@
                 <div class="brand-logo">TR</div>
                 <div>
                     <div class="brand-text-main">Tófalvi Richárd</div>
-                    <div class="brand-text-sub">Power BI / Data Analyst</div>
+                    <div class="brand-text-sub">Power BI • Looker Studio • Data Analyst</div>
                 </div>
             </div>
             <nav class="nav-links">
@@ -642,7 +629,7 @@
                 <div class="chip-row">
                     <span class="chip-dot"></span>
                     <span>Junior / kezdő szint</span>
-                    <span class="chip-label">Power BI • SQL • Python</span>
+                    <span class="chip-label">Power BI • Looker Studio • SQL • Python • BigQuery</span>
                 </div>
 
                 <h1>
@@ -651,16 +638,16 @@
                 </h1>
 
                 <p class="hero-subtitle">
-                    Az adatelemzés és a statisztika régóta érdekel, és az elmúlt évben teljes mértékben erre az útra álltam rá.
-                    Power BI-t, SQL-t és Python alapú elemzést tanulok, és projektalapúan fejlesztem a vizualizációs és modellezési gyakorlatomat.
-                    A jelenlegi munkahelyemen tudatosan építettem be az adatvezérelt gondolkodást: olyan riportokat és dashboardokat hoztam létre,
-                    amelyek ma már több csapat napi működését támogatják, átláthatóbbá teszik a teljesítményt,
-                    és hozzájárulnak a jobb ügyfélélményhez.
+Az adatelemzés és a statisztika régóta érdekel, az elmúlt évben pedig tudatosan ezen a területen kezdtem el építeni a karrieremet.
+Power BI-t, SQL-t és Python alapú adatelemzést tanulok, miközben projektalapon fejlesztem a vizualizációs és adatmodellezési gyakorlati tudásomat.
+
+A jelenlegi munkahelyemen aktívan építettem be az adatvezérelt szemléletet a napi működésbe: olyan riportokat és dashboardokat készítettem, amelyek ma már több csapat munkáját támogatják, átláthatóbbá teszik a teljesítményt, és hozzájárulnak a jobb ügyfélélményhez.
+
+Az utóbbi időben a Google Cloud Platform ökoszisztémája felé is nyitottam, hogy gyakorlati projekteken keresztül bővítsem a technikai ismereteimet és modernebb adatfeldolgozási megoldásokat is megismerjek.
                 </p>
 
                 <div class="hero-actions">
                     <!-- IDE TEHETSZ CV LINKET -->
-
                 </div>
             </div>
         </section>
@@ -669,216 +656,403 @@
         <section id="projects">
             <div class="section-header">
                 <h2 class="section-title">Projektek</h2>
+                <p class="section-subtitle">Power BI és Looker Studio / Google Cloud alapú portfólió projektek</p>
             </div>
 
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-title-row">
-                        <h3 class="card-title">World Population 2025</h3>
-                        <span class="card-tag">Data Visualization</span>
-                    </div>
+            <!-- POWER BI BLOKK -->
+            <div style="margin-bottom: 2.25rem;">
+                <div class="section-header" style="margin-bottom: 1rem;">
+                    <h3 class="section-title" style="font-size: 0.95rem; color: #38bdf8;">Power BI projektek</h3>
+                    <p class="section-subtitle">Riportkészítés, DAX, adattisztítás, üzleti dashboardok</p>
+                </div>
 
-                    <p class="card-desc">
-                        Power BI riport, amely bemutatja az országok 2025-ös népességét, migrációs trendjeit és termékenységi rátáit.
-                        A dashboard interaktív térképeket és kontinens szintű összegzést tartalmaz.
-                        A cél egy könnyen használható, átlátható demográfiai elemző felület létrehozása volt.
-                    </p>
-
-                    <!-- Screenshot gallery (two images side-by-side) -->
-                    <div style="
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 1rem;
-                        justify-content: center;
-                        margin: 1rem 0;
-                    ">
-
-                        <!-- Image 1 -->
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/screen1.png"
-                           target="_blank"
-                           style="flex: 1; min-width: 260px; max-width: 400px; text-align:center;">
-                            <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/screen1.png"
-                                 alt="Dashboard screenshot 1"
-                                 style="
-                                     width:100%;
-                                     max-height:240px;
-                                     object-fit:cover;
-                                     border-radius:14px;
-                                     border:1px solid rgba(148,163,184,0.25);
-                                     cursor:pointer;
-                                 ">
-                        </a>
-
-                        <!-- Image 2 -->
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/screen2.png"
-                           target="_blank"
-                           style="flex: 1; min-width: 260px; max-width: 400px; text-align:center;">
-                            <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/screen2.png"
-                                 alt="Dashboard screenshot 2"
-                                 style="
-                                     width:100%;
-                                     max-height:240px;
-                                     object-fit:cover;
-                                     border-radius:14px;
-                                     border:1px solid rgba(148,163,184,0.25);
-                                     cursor:pointer;
-                                 ">
-                        </a>
-
-                    </div>
-
-                    <div class="card-meta">
-                        <span class="badge">📊 Power BI</span>
-                        <span class="badge">🧮 DAX</span>
-                        <span class="badge">📈 Data Visualization</span>
-                        <span class="badge">🧠 Storytelling</span>
-                    </div>
-
-                    <div class="card-links">
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/Word%20Country%20Population.pbix"
-                           class="card-link">📁 PBIX letöltése</a>
-
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/Word%20Country%20Population.pdf"
-                           class="card-link">📄 PDF összefoglaló</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-title-row">
-                        <h3 class="card-title">London Bike-sharing Analysis</h3>
-                        <span class="card-tag">Data Analysis</span>
-                    </div>
-
-                    <p class="card-desc">
-                        A riport a 2015–2016 közötti időszakban vizsgálja a londoni közösségi kerékpárbérlések trendjeit.
-                        Bemutatja a napi és órás forgalmi mintázatokat, valamint azt is, hogyan befolyásolják a különböző időjárási tényezők a kerékpárhasználatot.
-
-                        A projekt során nagy hangsúlyt fektettem a vizuális megjelenésre: a háttér és a placeholder elemek kialakításához PowerPointot is használtam, hogy egységes és esztétikus dizájnt hozzak létre.
-                    </p>
-
-                    <!-- Screenshot gallery (two images side-by-side) -->
-                    <div style="
-                        display:flex;
-                        flex-wrap:wrap;
-                        gap:1rem;
-                        justify-content:center;
-                        margin:1rem 0;
-                    ">
-                        <!-- Image 1 -->
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/bike1.png"
-                           target="_blank"
-                           style="flex:1; min-width:260px; max-width:400px; text-align:center;">
-                            <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/bike1.png"
-                                 alt="Bike-sharing Dashboard Screenshot 1"
-                                 style="
-                                     width:100%;
-                                     max-height:240px;
-                                     object-fit:cover;
-                                     border-radius:14px;
-                                     border:1px solid rgba(148,163,184,0.25);
-                                     cursor:pointer;
-                                 ">
-                        </a>
-
-                        <!-- Image 2 -->
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/bike2.png"
-                           target="_blank"
-                           style="flex:1; min-width:260px; max-width:400px; text-align:center;">
-                            <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/bike2.png"
-                                 alt="Bike-sharing Dashboard Screenshot 2"
-                                 style="
-                                     width:100%;
-                                     max-height:240px;
-                                     object-fit:cover;
-                                     border-radius:14px;
-                                     border:1px solid rgba(148,163,184,0.25);
-                                     cursor:pointer;
-                                 ">
-                        </a>
-                    </div>
-
-                    <div class="card-meta">
-                        <span class="badge">📊 Power BI</span>
-                        <span class="badge">⏱️ Idősoros elemzés</span>
-                        <span class="badge">🧮 DAX</span>
-                        <span class="badge">🧹 Data cleaning</span>
-                        <span class="badge" style="display:inline-flex; align-items:center; gap:4px;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Microsoft_Office_PowerPoint_%282019-present%29.svg"
-                                 alt="PowerPoint icon"
-                                 style="width:14px; height:14px;">
-                            PowerPoint
-                        </span>
-                    </div>
-
-                    <div class="card-links">
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/London_Bike.pbix"
-                           class="card-link">📁 PBIX letöltése</a>
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/London_Bike.pdf"
-                           class="card-link">📄 PDF összefoglaló</a>
-                    </div>
-                </article>
+                <div class="card-grid">
+                    <article class="card">
 
 
-                <! Project 3>
-                <article class="card">
-                    <div class="card-title-row">
-                        <h3 class="card-title">Company Performance Dashboard</h3>
-                        <span class="card-tag">Data Visualization</span>
-                    </div>
+                        <p class="card-desc">
+                            Power BI riport, amely bemutatja az országok 2025-ös népességét, migrációs trendjeit és termékenységi rátáit.
+                            A dashboard interaktív térképeket és kontinens szintű összegzést tartalmaz.
+                            A cél egy könnyen használható, átlátható demográfiai elemző felület létrehozása volt.
+                        </p>
 
-                    <p class="card-desc">
-                        Ez a Power BI riport egy vállalat teljesítményének átfogó elemzését mutatja be, azzal a céllal, hogy egyetlen oldalon, könnyen átlátható formában biztosítson vezetői szintű áttekintést a legfontosabb üzleti mutatókról.
-                        A megoldás egyik legerősebb eleme a teljesen dinamikus működés: a <strong>Sales / Quantity / Gross Profit</strong> szeletelő és az <strong>évválasztó</strong> nemcsak az adatokat, hanem a teljes vizuális struktúrát is vezérli. Ennek köszönhetően a riport automatikusan alkalmazkodik a kiválasztott nézethez.
-                        Dinamikusan változik:
-                        • a riport címe
-                        • a vizualizációk megnevezése
-                        • a KPI kártyák tartalma
-                        A dashboard így intelligensen vált a különböző üzleti perspektívák között, miközben minden kulcsinformáció egyetlen felületen marad elérhető.
-                    </p>
+                        <div style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 1rem;
+                            justify-content: center;
+                            margin: 1rem 0;
+                        ">
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/screen1.png"
+                               target="_blank"
+                               style="flex: 1; min-width: 260px; max-width: 400px; text-align:center;">
+                                <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/screen1.png"
+                                     alt="Dashboard screenshot 1"
+                                     style="
+                                         width:100%;
+                                         max-height:240px;
+                                         object-fit:cover;
+                                         border-radius:14px;
+                                         border:1px solid rgba(148,163,184,0.25);
+                                         cursor:pointer;
+                                     ">
+                            </a>
+
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/screen2.png"
+                               target="_blank"
+                               style="flex: 1; min-width: 260px; max-width: 400px; text-align:center;">
+                                <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/screen2.png"
+                                     alt="Dashboard screenshot 2"
+                                     style="
+                                         width:100%;
+                                         max-height:240px;
+                                         object-fit:cover;
+                                         border-radius:14px;
+                                         border:1px solid rgba(148,163,184,0.25);
+                                         cursor:pointer;
+                                     ">
+                            </a>
+                        </div>
+
+                        <div class="card-meta">
+                            <span class="badge">📊 Power BI</span>
+                            <span class="badge">🧮 DAX</span>
+                            <span class="badge">📈 Data Visualization</span>
+                            <span class="badge">🧠 Storytelling</span>
+                        </div>
+
+                        <div class="card-links">
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/Word%20Country%20Population.pbix"
+                               class="card-link">📁 PBIX letöltése</a>
+
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/Word%20Country%20Population.pdf"
+                               class="card-link">📄 PDF összefoglaló</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
 
 
-                    <!-- Screenshot gallery (two images side-by-side) -->
-                    <div style="
-                        display:flex;
-                        flex-wrap:wrap;
-                        gap:1rem;
-                        justify-content:center;
-                        margin:1rem 0;
-                    ">
-                        <!-- Image 1 -->
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/company1.png"
-                           target="_blank"
-                           style="flex:1; min-width:260px; max-width:400px; text-align:center;">
-                            <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/company1.png"
-                            "
-                            alt="Company-performance Dashboard Screenshot 2"
-                            style="
-                            width:100%;
-                            max-height:240px;
-                            object-fit:cover;
-                            border-radius:14px;
-                            border:1px solid rgba(148,163,184,0.25);
-                            cursor:pointer;
-                            ">
-                        </a>
-                    </div>
+                        <p class="card-desc">
+                            A riport a 2015–2016 közötti időszakban vizsgálja a londoni közösségi kerékpárbérlések trendjeit.
+                            Bemutatja a napi és órás forgalmi mintázatokat, valamint azt is, hogyan befolyásolják a különböző időjárási tényezők a kerékpárhasználatot.
+                            A projekt során nagy hangsúlyt fektettem a vizuális megjelenésre: a háttér és a placeholder elemek kialakításához PowerPointot is használtam, hogy egységes és esztétikus dizájnt hozzak létre.
+                        </p>
 
-                    <div class="card-meta">
-                        <span class="badge">🧮 DAX</span>
-                        <span class="badge">📈 KPI Dashboard</span>
-                        <span class="badge">📊 Performance Analysis</span>
-                        <span class="badge">🔄 YTD / PYTD</span>
-                        <span class="badge">💼 Business Reporting</span>
-                    </div>
+                        <div style="
+                            display:flex;
+                            flex-wrap:wrap;
+                            gap:1rem;
+                            justify-content:center;
+                            margin:1rem 0;
+                        ">
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/bike1.png"
+                               target="_blank"
+                               style="flex:1; min-width:260px; max-width:400px; text-align:center;">
+                                <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/bike1.png"
+                                     alt="Bike-sharing Dashboard Screenshot 1"
+                                     style="
+                                         width:100%;
+                                         max-height:240px;
+                                         object-fit:cover;
+                                         border-radius:14px;
+                                         border:1px solid rgba(148,163,184,0.25);
+                                         cursor:pointer;
+                                     ">
+                            </a>
 
-                    <div class="card-links">
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/Company Performance Dashboard.pdf"
-                           class="card-link">📁 PBIX letöltése</a>
-                        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/Company Performance Dashboard.pdf"
-                           class="card-link">📄 PDF összefoglaló</a>
-                    </div>
-                </article>
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/bike2.png"
+                               target="_blank"
+                               style="flex:1; min-width:260px; max-width:400px; text-align:center;">
+                                <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/bike2.png"
+                                     alt="Bike-sharing Dashboard Screenshot 2"
+                                     style="
+                                         width:100%;
+                                         max-height:240px;
+                                         object-fit:cover;
+                                         border-radius:14px;
+                                         border:1px solid rgba(148,163,184,0.25);
+                                         cursor:pointer;
+                                     ">
+                            </a>
+                        </div>
 
+                        <div class="card-meta">
+                            <span class="badge">📊 Power BI</span>
+                            <span class="badge">⏱️ Idősoros elemzés</span>
+                            <span class="badge">🧮 DAX</span>
+                            <span class="badge">🧹 Data cleaning</span>
+                            <span class="badge" style="display:inline-flex; align-items:center; gap:4px;">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Microsoft_Office_PowerPoint_%282019-present%29.svg"
+                                     alt="PowerPoint icon"
+                                     style="width:14px; height:14px;">
+                                PowerPoint
+                            </span>
+                        </div>
+
+                        <div class="card-links">
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/London_Bike.pbix"
+                               class="card-link">📁 PBIX letöltése</a>
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/London_Bike.pdf"
+                               class="card-link">📄 PDF összefoglaló</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="card">
+
+
+                        <p class="card-desc">
+                            Ez a Power BI riport egy vállalat teljesítményének átfogó elemzését mutatja be, azzal a céllal, hogy egyetlen oldalon, könnyen átlátható formában biztosítson vezetői szintű áttekintést a legfontosabb üzleti mutatókról.
+                            A megoldás egyik legerősebb eleme a teljesen dinamikus működés: a <strong>Sales / Quantity / Gross Profit</strong> szeletelő és az <strong>évválasztó</strong> nemcsak az adatokat, hanem a teljes vizuális struktúrát is vezérli.
+                            Ennek köszönhetően a riport automatikusan alkalmazkodik a kiválasztott nézethez.
+                        </p>
+
+                        <div style="
+                            display:flex;
+                            flex-wrap:wrap;
+                            gap:1rem;
+                            justify-content:center;
+                            margin:1rem 0;
+                        ">
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/company1.png"
+                               target="_blank"
+                               style="flex:1; min-width:260px; max-width:400px; text-align:center;">
+                                <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/company1.png"
+                                     alt="Company Performance Dashboard Screenshot"
+                                     style="
+                                         width:100%;
+                                         max-height:240px;
+                                         object-fit:cover;
+                                         border-radius:14px;
+                                         border:1px solid rgba(148,163,184,0.25);
+                                         cursor:pointer;
+                                     ">
+                            </a>
+                        </div>
+
+                        <div class="card-meta">
+                            <span class="badge">📊 Power BI</span>
+                            <span class="badge">🧮 DAX</span>
+                            <span class="badge">📈 KPI Dashboard</span>
+                            <span class="badge">🔄 YTD / PYTD</span>
+                            <span class="badge">💼 Business Reporting</span>
+                        </div>
+
+                        <div class="card-links">
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/Company%20Performance%20Dashboard.pbix"
+                               class="card-link">📁 PBIX letöltése</a>
+                            <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/Company%20Performance%20Dashboard.pdf"
+                               class="card-link">📄 PDF összefoglaló</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- ELVÁLASZTÓ -->
+            <div style="
+                height: 1px;
+                width: 100%;
+                margin: 2.2rem 0 2rem;
+                background: linear-gradient(to right, transparent, rgba(56,189,248,0.55), transparent);
+            "></div>
+
+            <!-- LOOKER + GCP BLOKK -->
+            <div>
+                <div class="section-header" style="margin-bottom: 1rem;">
+                    <h3 class="section-title" style="font-size: 0.95rem; color: #a78bfa;">Looker Studio + Google Cloud projektek</h3>
+                    <p class="section-subtitle">BigQuery, Cloud Run, automatizált adatfrissítés, modern dashboardok</p>
+                </div>
+                <div class="card" style="margin-bottom: 1.6rem;">
+
+    <div class="card-title-row">
+        <h3 class="card-title">Data Pipeline & Architecture</h3>
+        <span class="card-tag">Google Cloud</span>
+    </div>
+
+    <p class="card-desc">
+        A Looker Studio projektjeim egy Google Cloud alapú adatpipeline-re épülnek.
+        Az adatgyűjtés különböző API-kból történik Python alapú feldolgozással,
+        amely Cloud Run környezetben fut.
+
+        A feldolgozott adatok BigQuery adattárházba kerülnek,
+        ahol strukturált, riportolható adatkészletek jönnek létre.
+        Ezekre a táblákra épülnek a Looker Studio dashboardok,
+        amelyek interaktív elemzést és vizualizációt biztosítanak.
+
+        A pipeline egyes projektekben természetes nyelvi feldolgozást (NLP)
+        és gépi tanulási modelleket (Machine Learning) is használ.
+    </p>
+
+    <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:0.6rem;
+        margin-top:0.9rem;
+    ">
+
+        <span class="badge">API data ingestion</span>
+        <span class="badge">Python data processing</span>
+        <span class="badge">Cloud Run execution</span>
+        <span class="badge">BigQuery data warehouse</span>
+        <span class="badge">Looker Studio dashboards</span>
+        <span class="badge">Automated data pipelines</span>
+        <span class="badge">NLP</span>
+        <span class="badge">Machine Learning</span>
+        <span class="badge">Sentiment Analysis</span>
+
+    </div>
+
+</div>
+
+                <div class="card-grid">
+                    <article class="card">
+
+
+    <p class="card-desc">
+        Looker Studio dashboard, amely az amerikai Big Tech vállalatok (Apple, Microsoft, Nvidia, Amazon, Google, Meta stb.)
+        részvénypiaci teljesítményét elemzi.
+
+        Az adatokat API-n keresztül gyűjtő Python script tölti a Google Cloud környezetben futó pipeline segítségével
+        BigQuery táblákba. A Looker Studio erre a strukturált adattárra építve biztosít interaktív pénzügyi riportot.
+    </p>
+
+    <!-- Screenshot gallery -->
+    <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:1rem;
+        justify-content:center;
+        margin:1rem 0;
+    ">
+
+        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/4bigtech1.png"
+           target="_blank"
+           style="flex:1; min-width:260px; max-width:400px; text-align:center;">
+
+            <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/4bigtech1.png"
+                 alt="Big Tech dashboard screenshot"
+                 style="
+                     width:100%;
+                     max-height:240px;
+                     object-fit:cover;
+                     border-radius:14px;
+                     border:1px solid rgba(148,163,184,0.25);
+                     cursor:pointer;
+                 ">
+        </a>
+
+        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/4bigtech2.png"
+           target="_blank"
+           style="flex:1; min-width:260px; max-width:400px; text-align:center;">
+
+            <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/4bigtech2.png"
+                 alt="Big Tech market dashboard screenshot"
+                 style="
+                     width:100%;
+                     max-height:240px;
+                     object-fit:cover;
+                     border-radius:14px;
+                     border:1px solid rgba(148,163,184,0.25);
+                     cursor:pointer;
+                 ">
+        </a>
+
+    </div>
+
+    <div class="card-meta">
+        <span class="badge">📊 Looker Studio</span>
+        <span class="badge">☁️ BigQuery</span>
+        <span class="badge">⚙️ Cloud Run</span>
+        <span class="badge">🐍 Python</span>
+        <span class="badge">📈 Finance Analytics</span>
+    </div>
+
+<div class="card-links">
+
+    <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/4bigtech_markettrends.pdf"
+       class="card-link"
+       target="_blank">
+       📄 PDF összefoglaló
+    </a>
+
+
+    <div class="card-meta">
+<span class="badge">API → Python → Cloud Run → BigQuery → Looker Studio</span>
+</div>
+
+</div>
+
+</article>
+                    <article class="card">
+
+
+                        <p class="card-desc">
+                            Magyar nyelvű YouTube kommentek sentiment elemzése automatizált adatpipeline segítségével.
+                            A megoldás BigQuery táblákra, napi betöltésre és dashboard célú aggregációkra épül.
+                            A projekt jól bemutatja az adatgyűjtés, transzformáció és riporting összekapcsolását a Google Cloud környezetben.
+                        </p>
+
+                           <!-- Screenshot gallery -->
+    <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:1rem;
+        justify-content:center;
+        margin:1rem 0;
+    ">
+
+        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/gcp_sentiment_analysis1.png"
+           target="_blank"
+           style="flex:1; min-width:260px; max-width:400px; text-align:center;">
+
+            <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/gcp_sentiment_analysis1.png"
+                 alt="Youtube analysis screenshot"
+                 style="
+                     width:100%;
+                     max-height:240px;
+                     object-fit:cover;
+                     border-radius:14px;
+                     border:1px solid rgba(148,163,184,0.25);
+                     cursor:pointer;
+                 ">
+        </a>
+
+        <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/gcp_sentiment_analysis2.png"
+           target="_blank"
+           style="flex:1; min-width:260px; max-width:400px; text-align:center;">
+
+            <img src="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/gcp_sentiment_analysis2.png"
+                 alt="Youtube analysis screenshot"
+                 style="
+                     width:100%;
+                     max-height:240px;
+                     object-fit:cover;
+                     border-radius:14px;
+                     border:1px solid rgba(148,163,184,0.25);
+                     cursor:pointer;
+                 ">
+        </a>
+
+    </div>
+
+                        <div class="card-meta">
+                            <span class="badge">🐍 Python</span>
+                            <span class="badge">☁️ BigQuery</span>
+                            <span class="badge">⚙️ Cloud Run</span>
+                            <span class="badge">🧠 NLP</span>
+                            <span class="badge">📊 Looker Studio</span>
+                        </div>
+
+                        <div class="card-links">
+                               <a href="https://raw.githubusercontent.com/tofalvirichard/richard.tofalvi-portfolio/main/assets/popular_youtube_chanel_analysis_.pdf"
+                                    class="card-link"
+                                  target="_blank">
+                                    📄 PDF összefoglaló
+                                 </a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -893,6 +1067,8 @@
                     <div class="pill-row">
                         <span class="pill pill-strong">📊 Power BI riportkészítés</span>
                         <span class="pill pill-strong">🧮 DAX mérések</span>
+                        <span class="pill">📈 Looker Studio</span>
+                        <span class="pill">☁️ BigQuery</span>
                         <span class="pill">⚗️ Power Query (M)</span>
                         <span class="pill">🗄️ SQL (PostgreSQL, MySQL)</span>
                         <span class="pill">🐍 Python (alap adatelemzés)</span>
@@ -909,7 +1085,6 @@
                     <div class="exp-label">Fókusz területek</div>
                     <div style="display:flex; flex-direction:column; gap:0.8rem; font-size:0.9rem;">
 
-                        <!-- 1. Üzleti riportok -->
                         <div style="display:flex; align-items:flex-start; gap:0.6rem;">
                             <span style="font-size:1.2rem;">📊</span>
                             <div>
@@ -918,7 +1093,6 @@
                             </div>
                         </div>
 
-                        <!-- 2. Dimenziós modellezés -->
                         <div style="display:flex; align-items:flex-start; gap:0.6rem;">
                             <span style="font-size:1.2rem;">🧩</span>
                             <div>
@@ -927,7 +1101,6 @@
                             </div>
                         </div>
 
-                        <!-- 3. DAX mutatók -->
                         <div style="display:flex; align-items:flex-start; gap:0.6rem;">
                             <span style="font-size:1.2rem;">⚙️</span>
                             <div>
@@ -936,7 +1109,6 @@
                             </div>
                         </div>
 
-                        <!-- 4. Python adatelemzés -->
                         <div style="display:flex; align-items:flex-start; gap:0.6rem;">
                             <span style="font-size:1.2rem;">🐍</span>
                             <div>
@@ -977,15 +1149,7 @@
 </div>
 
 <script>
-    // Dinamikus év a láblécben
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
